@@ -1,0 +1,48 @@
+@startuml 1Claw_WS_Protocol
+!theme plain
+
+title 1Claw WebSocket Protocol - Sequence
+
+skinparam backgroundColor #1E1E1E
+skinparam actorBackgroundColor #2D2D2D
+skinparam actorBorderColor #0078D7
+skinparam participantBackgroundColor #2D2D2D
+skinparam participantBorderColor #0078D7
+skinparam arrowColor #00FF00
+skinparam titleBorderColor #0078D7
+skinparam titleFontColor #FFFFFF
+skinparam defaultFontColor #FFFFFF
+
+actor "User" as user
+participant "Flutter App" as app
+participant "Go Server" as server
+database "Hermes Agent" as hermes
+
+user -> app: Open app
+app -> server: WebSocket Connect
+server --> app: {type: "status", profiles: [...]}
+app -> app: Show profile cards
+
+user -> app: Tap "AI Assistant" card
+app -> server: {type: "switch_profile", profile_id: "assistant"}
+server --> app: {type: "status", profiles: [...]}
+
+user -> app: Type "Hello!"
+app -> server: {type: "chat", profile_id: "assistant", content: "Hello!"}
+server -> hermes: Forward message
+hermes --> server: Generate response
+server --> app: {type: "chat", profile_id: "assistant", content: "Hi there!"}
+app -> app: Display bubble
+
+group Heartbeat (every 30s)
+  app -> server: {type: "ping"}
+  server --> app: {type: "pong"}
+end
+
+group Auto-Reconnect (on disconnect)
+  app -> app: Wait 1s, 2s, 4s... (exponential backoff)
+  app -> server: WebSocket Connect
+  server --> app: {type: "status", profiles: [...]}
+end
+
+@enduml

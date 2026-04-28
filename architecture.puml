@@ -1,0 +1,57 @@
+@startuml 1Claw_Architecture
+!theme plain
+
+title 1Claw Multi-Agent Platform - System Architecture
+
+skinparam componentStyle rectangle
+skinparam backgroundColor #1E1E1E
+skinparam componentBackgroundColor #2D2D2D
+skinparam componentBorderColor #0078D7
+skinparam arrowColor #00FF00
+skinparam titleBorderColor #0078D7
+skinparam titleFontColor #FFFFFF
+skinparam defaultFontColor #FFFFFF
+
+package "Mobile/Desktop Client" as client {
+  [Flutter App] as flutter
+  [WebSocket Client] as wsclient
+  flutter --> wsclient
+}
+
+package "1Claw Server (Go Gateway)" as server {
+  [HTTP Server] as httpsrv
+  [WebSocket Hub] as wshub
+  [Profile Manager] as profilemgr
+  [Agent Bridge] as agentbridge
+  [Config Loader] as config
+
+  httpsrv --> wshub : /ws upgrade
+  wshub --> profilemgr : route by profile_id
+  profilemgr --> agentbridge : dispatch message
+  config --> profilemgr : load profiles
+}
+
+package "Agent Kernel" as kernel {
+  [Hermes Profile: default] as hermes1
+  [Hermes Profile: writer] as hermes2
+  [Hermes Profile: coder] as hermes3
+}
+
+wsclient -down-> httpsrv : wss://host:port/ws
+agentbridge --> hermes1 : subprocess stdin/stdout
+agentbridge --> hermes2 : subprocess stdin/stdout
+agentbridge --> hermes3 : subprocess stdin/stdout
+
+note right of wsclient
+  JSON protocol
+  Auto-reconnect
+  Heartbeat ping/pong
+end note
+
+note right of agentbridge
+  AgentBridge interface
+  Enables pluggable
+  Hermes backends
+end note
+
+@enduml

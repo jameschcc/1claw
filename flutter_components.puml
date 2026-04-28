@@ -1,0 +1,50 @@
+@startuml 1Claw_Flutter_Components
+!theme plain
+
+title 1Claw Flutter App - Component Tree
+
+skinparam backgroundColor #1E1E1E
+skinparam componentBackgroundColor #2D2D2D
+skinparam componentBorderColor #0078D7
+skinparam arrowColor #00FF00
+skinparam titleBorderColor #0078D7
+skinparam titleFontColor #FFFFFF
+skinparam defaultFontColor #FFFFFF
+
+package "State Layer" as state {
+  [ProfilesProvider] as pp
+  [ChatProvider] as cp
+  [ConnectionProvider] as connp
+}
+
+package "Services Layer" as services {
+  [WebSocketService] as wss
+  [ApiService] as apis
+}
+
+package "Screens" as screens {
+  [HomeScreen] as home
+  [ChatScreen] as chat
+  [SettingsScreen] as settings
+}
+
+package "Widgets" as widgets {
+  [AgentCard] as card
+  [ChatBubble] as bubble
+  [ConnectionIndicator] as indicator
+  [MessageInput] as input
+}
+
+screens --> widgets : contains
+screens --> state : watches
+state --> services : calls
+services --> wss : WebSocket
+services --> apis : HTTP REST
+
+home --> card : renders N cards
+home --> indicator : shows status
+home --> settings : navigates
+chat --> bubble : renders messages
+chat --> input : user input
+
+@enduml

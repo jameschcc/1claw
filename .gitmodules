@@ -1,0 +1,6 @@
+[submodule "1claw-server"]
+	path = 1claw-server
+	url = ssh://git@gl.min123.com:58022/john/1claw-server.git
+[submodule "1claw-app"]
+	path = 1claw-app
+	url = ssh://git@gl.min123.com:58022/john/1claw-app.git
