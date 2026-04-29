@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1Claw — Multi-Agent AI Platform in Your Pocket</title>
-  <meta name="description" content="1Claw is a next-generation multi-agent platform. Manage multiple AI personas on your phone as beautiful cards — Dev, PM, Sales, Support, always online and ready to chat.">
+  <title>1Claw — 多智能体随身对话平台</title>
+  <meta name="description" content="1Claw 是新一代多智能体平台，在手机上以卡片形式管理多个 AI 角色并随时对话。支持 Dev、Product、Sales 等多角色常驻在线。">
   <style>
     :root {
       --bg: #0f1117;
@@ -21,7 +21,7 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -140,12 +140,6 @@
       border-color: var(--accent);
       background: rgba(124,92,252,.1);
     }
-    .btn-ghost {
-      border: 1px solid transparent;
-      color: var(--text2);
-      background: transparent;
-    }
-    .btn-ghost:hover { color: var(--text); }
 
     /* Cards preview */
     .cards-preview {
@@ -352,26 +346,26 @@
     <nav>
       <div class="logo">1<span>Claw</span></div>
       <div class="links">
-        <a href="#features">Features</a>
-        <a href="#usage">Usage</a>
-        <a href="#arch">Architecture</a>
-        <a href="#download">Download</a>
+        <a href="#features">特性</a>
+        <a href="#usage">使用</a>
+        <a href="#arch">架构</a>
+        <a href="#download">下载</a>
         <a href="https://github.com/jameschcc/1claw" target="_blank">GitHub</a>
-        <a href="/zh/" class="lang-switch">中文</a>
+        <a href="/" class="lang-switch">English</a>
       </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
-      <h1>Your AI Agent Team,<br><span class="gradient">Always in Your Pocket</span></h1>
-      <p>1Claw lets you manage multiple AI personas on your phone as beautiful cards — Dev, PM, Sales, Support — all always online, one tap to chat.</p>
+      <h1>随身携带你的<br><span class="gradient">AI 智能体团队</span></h1>
+      <p>1Claw 让你在手机上以精美卡片管理多个 AI 角色——Dev、产品经理、售前、技术支持……全部常驻在线，一点即聊。</p>
       <div class="hero-buttons">
         <a class="btn btn-primary" href="https://github.com/jameschcc/1claw/releases" target="_blank">
-          📲 Download App
+          📲 下载 App
         </a>
         <a class="btn btn-outline" href="https://github.com/jameschcc/1claw" target="_blank">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          Star on GitHub
+          GitHub
         </a>
       </div>
 
@@ -379,89 +373,89 @@
         <div class="profile-card">
           <div class="emoji">💻</div>
           <div class="name">Dev</div>
-          <div class="role">Software Engineer</div>
+          <div class="role">开发者</div>
         </div>
         <div class="profile-card">
           <div class="emoji">📋</div>
           <div class="name">PM</div>
-          <div class="role">Product Manager</div>
+          <div class="role">产品经理</div>
         </div>
         <div class="profile-card">
           <div class="emoji">🤝</div>
           <div class="name">Sales</div>
-          <div class="role">Sales Engineer</div>
+          <div class="role">售前</div>
         </div>
         <div class="profile-card">
           <div class="emoji">🎧</div>
           <div class="name">Support</div>
-          <div class="role">Tech Support</div>
+          <div class="role">技术支持</div>
         </div>
       </div>
     </section>
 
     <!-- Features -->
     <section class="features" id="features">
-      <h2 class="section-title">Why 1Claw?</h2>
+      <h2 class="section-title">为什么选择 1Claw</h2>
       <div class="features-grid">
         <div class="feature-card">
           <div class="icon">🎴</div>
-          <h3>Card-Based Multi-Role</h3>
-          <p>Each AI persona is a beautiful card with its own icon, color, and bio. Tap to switch conversations instantly — no reloads needed.</p>
+          <h3>卡片式多角色管理</h3>
+          <p>每个 AI 角色一张精美卡片，图标、颜色、描述一目了然。点击卡片即刻切换对话，无需重新加载。</p>
         </div>
         <div class="feature-card">
           <div class="icon">⚡</div>
-          <h3>Always Online · Real-Time Chat</h3>
-          <p>Powered by WebSocket persistent connections. All roles stay in the background — lock screen, switch apps, they're always ready.</p>
+          <h3>永久在线 · 实时对话</h3>
+          <p>基于 WebSocket 长连接，所有角色常驻后台永不掉线。手机锁屏、切后台依然保持连接，随时唤醒。</p>
         </div>
         <div class="feature-card">
           <div class="icon">🧠</div>
-          <h3>Hermes Multi-Agent Kernel</h3>
-          <p>Each profile has its own persona, memory, and conversation history. Built on Hermes Agent, supporting 10+ concurrent roles.</p>
+          <h3>Hermes 多智能体内核</h3>
+          <p>每个 Profile 独立人设、独立记忆、独立会话。底层对接 Hermes Agent，支持 10+ 角色同时在线运行。</p>
         </div>
         <div class="feature-card">
           <div class="icon">📱</div>
-          <h3>Native Flutter Cross-Platform</h3>
-          <p>Single codebase for iOS, Android, macOS, and Windows. Native performance, buttery animations, and perfect mobile+desktop UX.</p>
+          <h3>原生 Flutter 跨平台</h3>
+          <p>一套代码打包 iOS / Android / macOS / Windows，Native 性能、丝滑动画、完美适配手机与桌面。</p>
         </div>
         <div class="feature-card">
           <div class="icon">🔐</div>
-          <h3>Self-Hosted · Data Privacy</h3>
-          <p>Go backend on your own server — no third-party cloud. One-command Docker deployment for local network or public internet.</p>
+          <h3>自建服务 · 数据安全</h3>
+          <p>Go 语言后端 + 你自己的服务器，数据不上第三方云。支持 Docker 一键部署，内网公网均可。</p>
         </div>
         <div class="feature-card">
           <div class="icon">🎨</div>
-          <h3>Dark & Light Themes</h3>
-          <p>Built-in dark and light themes that follow your system settings. Minimalist Metro-style UI focused on conversation.</p>
+          <h3>深色 / 浅色主题</h3>
+          <p>内置暗色与亮色主题，跟随系统自动切换。极简 Metro 风格 UI，专注对话本身。</p>
         </div>
       </div>
     </section>
 
-    <!-- Quick Start / Usage -->
+    <!-- Quick Start -->
     <section class="usage" id="usage">
       <div class="container">
-        <h2 class="section-title">Quick Start</h2>
-        <p class="section-subtitle">Get up and running in 4 steps</p>
+        <h2 class="section-title">快速开始</h2>
+        <p class="section-subtitle">4 步上手，立刻使用</p>
         <div class="steps">
           <div class="step">
             <div class="step-num">1</div>
-            <h4>📲 Download the App</h4>
-            <p>Get the latest release for your platform from <a href="https://github.com/jameschcc/1claw/releases" target="_blank" style="color:var(--accent2)">GitHub Releases</a>. iOS, Android, macOS, and Windows supported.</p>
+            <h4>📲 下载 App</h4>
+            <p>从 <a href="https://github.com/jameschcc/1claw/releases" target="_blank" style="color:var(--accent2)">GitHub Releases</a> 获取最新版本。支持 iOS、Android、macOS 和 Windows。</p>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <h4>🚀 Deploy the Server</h4>
-            <p>Run the backend on any Linux server with Docker:</p>
+            <h4>🚀 部署服务器</h4>
+            <p>在任意 Linux 服务器上用 Docker 运行后端：</p>
             <p><code>docker run -d -p 8080:8080 ghcr.io/jameschcc/1claw-server</code></p>
           </div>
           <div class="step">
             <div class="step-num">3</div>
-            <h4>🔑 Configure API Keys</h4>
-            <p>Connect your LLM provider (OpenAI, DeepSeek, Claude, etc.) in the server config. Each role can use a different model.</p>
+            <h4>🔑 配置 API Key</h4>
+            <p>在服务器配置中接入你的 LLM 提供商（OpenAI、DeepSeek、Claude 等），每个角色可以使用不同的模型。</p>
           </div>
           <div class="step">
             <div class="step-num">4</div>
-            <h4>🎭 Customize Personas</h4>
-            <p>Edit profile cards — change name, emoji, personality prompt, and model. Add or remove roles anytime.</p>
+            <h4>🎭 自定义角色</h4>
+            <p>编辑角色卡片——修改名称、表情、性格提示和模型。随时增删角色。</p>
           </div>
         </div>
       </div>
@@ -470,8 +464,8 @@
     <!-- Architecture -->
     <section class="arch" id="arch">
       <div class="container">
-        <h2 class="section-title">System Architecture</h2>
-        <p class="section-subtitle">Clean end-to-end design</p>
+        <h2 class="section-title">系统架构</h2>
+        <p class="section-subtitle">端到端设计，简洁优雅</p>
         <div class="arch-diagram">┌───────────────────────────────────┐
 │       <span class="hl3">📱 Flutter App</span> (iOS/Android)    │
 │     ┌──────────┐ ┌──────────┐       │
@@ -490,8 +484,8 @@
 ┌───────────▼───────────────────────┐
 │  <span class="hl2">Hermes Agent Kernel</span>              │
 │  • deepseek / claude / gemini     │
-│  • Independent persona & memory   │
-│  • 10+ profiles running in parallel│
+│  • 独立人设 · 独立记忆            │
+│  • 10+ Profile 常驻并行           │
 └───────────────────────────────────┘</div>
       </div>
     </section>
@@ -499,21 +493,21 @@
     <!-- Download -->
     <section class="download" id="download">
       <div class="container">
-        <h2 class="section-title">Download & Install</h2>
-        <p class="section-subtitle">Open source. Free forever. GPLv3 licensed.</p>
+        <h2 class="section-title">下载与安装</h2>
+        <p class="section-subtitle">开源免费，GPLv3 协议</p>
         <div class="download-grid">
           <div class="dl-card">
             <div class="icon">📱</div>
             <h3>1Claw App</h3>
-            <p>Flutter mobile & desktop app for iOS, Android, macOS, Windows.</p>
+            <p>Flutter 跨平台应用，iOS / Android / macOS / Windows 全支持。</p>
             <a class="btn btn-primary" href="https://github.com/jameschcc/1claw/releases" target="_blank" style="font-size:13px;padding:10px 20px;">
-              📲 Download Latest
+              📲 下载最新版本
             </a>
           </div>
           <div class="dl-card">
             <div class="icon">🐳</div>
             <h3>1Claw Server (Docker)</h3>
-            <p>Ready-to-run Docker image for your own server.</p>
+            <p>即开即用的 Docker 镜像，在你的服务器上运行。</p>
             <div style="font-size:12px;background:var(--bg);border-radius:8px;padding:10px;text-align:left;font-family:monospace;color:var(--accent4);margin-bottom:14px;border:1px solid var(--surface2);">
               docker run -d \<br>
               &nbsp;&nbsp;-p 8080:8080 \<br>
@@ -522,10 +516,10 @@
           </div>
           <div class="dl-card">
             <div class="icon">💻</div>
-            <h3>Source Code</h3>
-            <p>Build from source or contribute on GitHub.</p>
+            <h3>源代码</h3>
+            <p>在 GitHub 上查看源码或参与贡献。</p>
             <a class="btn btn-outline" href="https://github.com/jameschcc/1claw" target="_blank" style="font-size:13px;padding:10px 20px;">
-              View on GitHub
+              查看 GitHub
             </a>
           </div>
         </div>
@@ -534,27 +528,26 @@
 
     <!-- CTA -->
     <section class="cta">
-      <h2>Ready to Assemble Your AI Team?</h2>
-      <p>1Claw is open source and free to use. Start now.</p>
+      <h2>准备好带上你的 AI 团队了吗？</h2>
+      <p>1Claw 开源免费，即刻开始使用。</p>
       <div class="hero-buttons">
-        <a class="btn btn-primary" href="https://github.com/jameschcc/1claw" target="_blank">📖 Read the Docs</a>
-        <a class="btn btn-outline" href="https://github.com/jameschcc/1claw/releases" target="_blank">⬇️ Download Release</a>
+        <a class="btn btn-primary" href="https://github.com/jameschcc/1claw" target="_blank">📖 查看文档</a>
+        <a class="btn btn-outline" href="https://github.com/jameschcc/1claw/releases" target="_blank">⬇️ 下载 Release</a>
       </div>
     </section>
 
     <footer>
-      <p>1Claw — Open Source Multi-Agent Platform &nbsp;·&nbsp; Built with ❤️</p>
+      <p>1Claw — 开源多智能体平台 &nbsp;·&nbsp; Built with ❤️</p>
       <div class="footer-links">
         <a href="https://github.com/jameschcc/1claw" target="_blank">GitHub</a>
         <a href="https://github.com/jameschcc/1claw/releases" target="_blank">Releases</a>
-        <a href="https://github.com/jameschcc/1claw/blob/main/LICENSE" target="_blank">License (GPLv3)</a>
-        <a href="/zh/">中文</a>
+        <a href="https://github.com/jameschcc/1claw/blob/main/LICENSE" target="_blank">许可证 (GPLv3)</a>
+        <a href="/">English</a>
       </div>
     </footer>
   </div>
 
   <script>
-    // Particle background
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -582,8 +575,6 @@
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -599,21 +590,15 @@
           }
         }
       }
-
-      // Draw particles
       for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${p.color},0.6)`;
         ctx.fill();
-
-        p.x += p.vx;
-        p.y += p.vy;
-
+        p.x += p.vx; p.y += p.vy;
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
       }
-
       requestAnimationFrame(draw);
     }
     draw();
