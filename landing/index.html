@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1Claw — Multi-Agent AI Platform in Your Pocket</title>
   <meta name="description" content="1Claw is a next-generation multi-agent platform. Manage multiple AI personas on your phone as beautiful cards — Dev, PM, Sales, Support, always online and ready to chat.">
+  <script>
+    (function(){
+      // Auto-redirect zh-CN browsers only on first visit
+      if (document.cookie.indexOf('1claw_lang=') === -1) {
+        var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        if (lang.indexOf('zh') === 0) {
+          document.cookie = '1claw_lang=zh; path=/; max-age=31536000; SameSite=Lax';
+          location.href = '/zh/';
+        }
+      }
+    })();
+  </script>
   <style>
     :root {
       --bg: #0f1117;
@@ -357,7 +369,7 @@
         <a href="#arch">Architecture</a>
         <a href="#download">Download</a>
         <a href="https://github.com/jameschcc/1claw" target="_blank">GitHub</a>
-        <a href="/zh/" class="lang-switch">中文</a>
+        <a href="/zh/" class="lang-switch" onclick="document.cookie='1claw_lang=zh; path=/; max-age=31536000; SameSite=Lax'">中文</a>
       </div>
     </nav>
 
@@ -548,7 +560,7 @@
         <a href="https://github.com/jameschcc/1claw" target="_blank">GitHub</a>
         <a href="https://github.com/jameschcc/1claw/releases" target="_blank">Releases</a>
         <a href="https://github.com/jameschcc/1claw/blob/main/LICENSE" target="_blank">License (GPLv3)</a>
-        <a href="/zh/">中文</a>
+        <a href="/zh/" onclick="document.cookie='1claw_lang=zh; path=/; max-age=31536000; SameSite=Lax'">中文</a>
       </div>
     </footer>
   </div>
