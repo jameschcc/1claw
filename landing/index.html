@@ -326,6 +326,92 @@
     .dl-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
     .dl-card p { font-size: 13px; color: var(--text2); margin-bottom: 18px; }
 
+    /* Pricing */
+    .pricing {
+      padding: 80px 0;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--surface2);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      transition: all .25s;
+      position: relative;
+    }
+    .price-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(0,0,0,.3);
+    }
+    .price-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, rgba(124,92,252,.08), var(--surface));
+    }
+    .price-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 20px;
+      letter-spacing: .5px;
+    }
+    .price-card .tier-icon { font-size: 40px; margin-bottom: 12px; }
+    .price-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .price-card .subtitle { font-size: 13px; color: var(--text2); margin-bottom: 20px; }
+    .price-card .price {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .price-card .price .currency { font-size: 18px; color: var(--text2); }
+    .price-card .price .period { font-size: 14px; font-weight: 400; color: var(--text2); }
+    .price-card .desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin: 16px 0 24px;
+      padding: 0 8px;
+    }
+    .price-card .features-list {
+      list-style: none;
+      text-align: left;
+      margin: 20px 0 28px;
+      padding: 0;
+    }
+    .price-card .features-list li {
+      font-size: 13px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--surface2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .price-card .features-list li:last-child { border-bottom: none; }
+    .price-card .features-list .check { color: var(--accent4); flex-shrink: 0; }
+    .price-card .features-list .cross { color: var(--text2); opacity: .5; flex-shrink: 0; }
+    .price-card .contact-email {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--accent2);
+      text-decoration: none;
+      margin-top: 12px;
+      word-break: break-all;
+    }
+    .price-card .contact-email:hover { text-decoration: underline; }
+
     /* CTA */
     .cta {
       padding: 100px 0;
@@ -368,6 +454,7 @@
         <a href="#usage">Usage</a>
         <a href="#arch">Architecture</a>
         <a href="#download">Download</a>
+        <a href="#pricing">Pricing</a>
         <a href="https://github.com/jameschcc/1claw" target="_blank">GitHub</a>
         <a href="/zh/" class="lang-switch" onclick="document.cookie='1claw_lang=zh; path=/; max-age=31536000; SameSite=Lax'">中文</a>
       </div>
@@ -544,10 +631,70 @@
       </div>
     </section>
 
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-subtitle">Free for personal use &middot; Commercial licenses for teams</p>
+        <div class="pricing-grid">
+
+          <!-- Free / Community -->
+          <div class="price-card">
+            <div class="tier-icon">🆓</div>
+            <h3>Community</h3>
+            <div class="price"><span class="currency">$</span>0</div>
+            <div class="subtitle">Free forever &middot; GPLv3</div>
+            <ul class="features-list">
+              <li><span class="check">✓</span> All core features</li>
+              <li><span class="check">✓</span> Self-hosted</li>
+              <li><span class="cross">✗</span> No technical support</li>
+              <li><span class="cross">✗</span> Community support only</li>
+            </ul>
+            <a class="btn btn-outline" href="https://github.com/jameschcc/1claw" target="_blank" style="font-size:13px;padding:10px 24px;">Get Started</a>
+          </div>
+
+          <!-- Commercial Maintenance -->
+          <div class="price-card featured">
+            <div class="tier-icon">🔧</div>
+            <h3>Commercial Maintenance</h3>
+            <div class="price"><span class="currency">$</span>2,000<span class="period">/yr</span></div>
+            <div class="subtitle">Per license &middot; Up to 100 users</div>
+            <ul class="features-list">
+              <li><span class="check">✓</span> Priority email support</li>
+              <li><span class="check">✓</span> Bug fix SLA</li>
+              <li><span class="check">✓</span> Security patches</li>
+              <li><span class="check">✓</span> Commercial use license</li>
+            </ul>
+            <a class="btn btn-primary" href="mailto:contact@maxqs.com" style="font-size:13px;padding:10px 24px;">Contact Sales</a>
+          </div>
+
+          <!-- Deployment Service -->
+          <div class="price-card">
+            <div class="tier-icon">🚀</div>
+            <h3>Deployment Service</h3>
+            <div class="price"><span class="currency">$</span>6,000<span class="period">/yr</span></div>
+            <div class="subtitle">Includes 1 year maintenance</div>
+            <ul class="features-list">
+              <li><span class="check">✓</span> Full deployment &amp; configuration</li>
+              <li><span class="check">✓</span> 1 year maintenance included</li>
+              <li><span class="check">✓</span> Priority email support</li>
+              <li><span class="check">✓</span> Commercial use license</li>
+            </ul>
+            <a class="btn btn-outline" href="mailto:contact@maxqs.com" style="font-size:13px;padding:10px 24px;">Contact Sales</a>
+          </div>
+
+        </div>
+        <p style="text-align:center;font-size:13px;color:var(--text2);margin-top:28px;">
+          Licenses for teams with ≤100 people. For larger organizations, please 
+          <a href="mailto:contact@maxqs.com" style="color:var(--accent2)">contact us</a>.
+        </p>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta">
       <h2>Ready to Assemble Your AI Team?</h2>
-      <p>1Claw is open source and free to use. Start now.</p>
+      <p>From free community edition to enterprise-grade deployment.</p>
       <div class="hero-buttons">
         <a class="btn btn-primary" href="https://github.com/jameschcc/1claw" target="_blank">📖 Read the Docs</a>
         <a class="btn btn-outline" href="https://github.com/jameschcc/1claw/releases" target="_blank">⬇️ Download Release</a>
